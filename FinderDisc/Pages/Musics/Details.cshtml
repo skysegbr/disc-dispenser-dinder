@@ -1,0 +1,31 @@
+@page
+@model FinderDisc.Pages.Musics.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Music</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Music.MusicName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Music.MusicName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Music.Band)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Music.Band.BandId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Music.MusicId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

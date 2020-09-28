@@ -1,0 +1,36 @@
+@page
+@model FinderDisc.Pages.Bands.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Band[0].BandName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Band) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BandName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.BandId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.BandId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.BandId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

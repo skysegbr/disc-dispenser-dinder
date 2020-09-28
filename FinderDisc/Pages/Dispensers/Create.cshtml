@@ -1,0 +1,39 @@
+@page
+@model FinderDisc.Pages.Dispensers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Dispenser</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Dispenser.Row" class="control-label"></label>
+                <input asp-for="Dispenser.Row" class="form-control" />
+                <span asp-validation-for="Dispenser.Row" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dispenser.Column" class="control-label"></label>
+                <input asp-for="Dispenser.Column" class="form-control" />
+                <span asp-validation-for="Dispenser.Column" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
